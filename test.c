@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <dlfcn.h>
 #include <pthread.h>
-#include "ssl/ssl.h"
 
 int main(int argc, char** argv){
     void *fHandle;
@@ -12,7 +11,7 @@ int main(int argc, char** argv){
 
     int conv1 = strtol(argv[1], &p, 10), conv2 = strtol(argv[2], &p, 10);
 //    fHandle = dlopen("./libexam1.so", RTLD_LAZY);
-    fHandle = dlopen("./testso.so", RTLD_LAZY);
+    fHandle = dlopen("lib/libtestso.so", RTLD_LAZY);
 
     if (!fHandle) {
         printf ("%s\n", dlerror());
